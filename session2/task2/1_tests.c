@@ -7,6 +7,10 @@ int is_palindrome(const char *str);
 int main(void) {
   // Use 'assert' to write some tests - does the function work?
   // consider what is and is not a palindrome!
+  //assert(is_palindrome("racecar") == 0);
+  assert(is_palindrome("hi ") == 0);
+  assert(is_palindrome("ava") == 1);
+  assert(is_palindrome(" ")==0);
   return 0;
 }
 

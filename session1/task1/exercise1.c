@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "exercise1.header"
 
 int main() {
-  int speed_limit, driver_speed, fine = 0;
+int speeding_tickets (int driver_speed, int speed_limit){
+  //int speed_limit, driver_speed, 
+  int fine = 0;
   char input[20];
 
   // Get user input for speed limit
@@ -36,4 +39,5 @@ int main() {
   }
 
   return 0;
+  }
 }

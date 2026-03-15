@@ -17,10 +17,23 @@ int factorial(int n) {
 }
 
 int main(int argc, char **argv) {
+  int r;
+  int n;
+  char buffer[3];
+  if (argv[2] == "C") {
+    n=factorial (argv[1]);
+    r=factoprial(argv[3]);
+    n-r=factorial(argv[1]-arg[3]);
+    printf("%d", n/(r * n-r));
+  
+  }
+
+
   /*
   The program should accept a command line argument as follows:
   ./combinatorials n C r
   ./combinatorials n P r
+  
 
   where n and r are both positive integers, and r is always less than or equal to n.
 

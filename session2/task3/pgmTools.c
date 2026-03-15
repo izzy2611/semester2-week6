@@ -8,17 +8,23 @@ unsigned char **read(unsigned char *fn, int *a, int *b);
 void printImage(unsigned char **p, int a, int b);
 
 int main(int argc, unsigned char **argv) {
+  int x;
+  int y;
+  unsigned char **image;
+  //if there are not enough arguments, prints what is supposed to be input
   if (argc != 2) {
     printf("Usage: ./pgmTools image_path\n");
     return 0;
   }
 
+//reads the file inputted 
   int a, b;
   unsigned char **i;
   i = read(argv[1], &a, &b);
 
   int c = -1;
 
+  //performs the required code based on what option the user picks
   do {
     c = -1;
     menu();
@@ -30,6 +36,16 @@ int main(int argc, unsigned char **argv) {
       printImage(i, a, b);
       break;
     case 2:
+    //Loop over width
+      for (x=0; x<a ; x++) {
+        //Loop over length
+        for (y=0; y<b; y++) {
+          image[x][y] = 255 - image[x][y];
+        }
+      }
+        printImage(image, b, a);
+
+      
       break;
     case 3:
       break;
@@ -56,6 +72,7 @@ int getUserInput(unsigned char *message) {
   return choice;
 }
 
+//Gives the user a list of options
 void menu(void) {
   printf("1 - View PGM Image\n");
   printf("2 - Invert Image\n");
